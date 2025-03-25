@@ -1,0 +1,52 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+@theme {
+  --color-text-primary: #0A1134;
+  --color-text-secondary: #656D94;
+  --font-family-inter: "Inter", sans-serif;
+  --font-family-writer: "The Writer", cursive;
+}
+
+@font-face {
+  font-family: "The Writer";
+  src: url("/The Writer.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: var(--font-family-inter);
+    color: var(--color-text-primary);
+    
+    background-color: #EFEFF5;
+    
+    background-image: 
+      linear-gradient(to right, #e3e9f287 1px, transparent 1px),
+      linear-gradient(to bottom, #e3e9f287 1px, transparent 1px);
+    
+    background-size: 20px 20px;
+    background-position: top left, top left;
+  }
+  
+  
+
+h1 {
+  font-family: var(--font-family-writer);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+
