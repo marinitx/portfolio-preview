@@ -21,23 +21,33 @@ const [firstPart, ...rest] = msg.split('.');
 const secondPart = rest.join('.');
 ---
 
-<div class="card-container relative">
-  <div class={`${className} flex items-center relative transition-transform duration-500 ease-out ${index === 1 ? 'group-hover:translate-x-[-20px]' : ''}`}>
+<div class="card-container relative w-full max-w-md mx-auto px-4">
+  <div class={`${className} flex flex-row items-center relative transition-transform duration-500 ease-out w-full 
+    ${index === 1 ? 'group-hover:translate-x-[-20px]' : ''} 
+    max-sm:flex-col max-sm:text-center max-sm:py-6 max-sm:items-center max-sm:gap-3`}>
     <img
       id={`pfp-image-${index + 1}`}
       src={pfpimg}
       alt="Memoji profile picture"
-      class="w-20 h-auto pl-2 select-none pointer-events-none"
+      class="w-20 h-auto pl-2 select-none pointer-events-none max-sm:pl-0 max-sm:w-16"
     />
-    <span class="flex flex-col pl-4">
-      <p class="font-semibold text-lg">Marina</p>
-      <p>{firstPart}<br />{secondPart}</p>
+    <span class="flex flex-col pl-4 max-sm:pl-0 max-sm:items-center">
+      <p class="font-semibold text-lg max-sm:text-base">Marina</p>
+      <p class="max-sm:text-center max-sm:px-4">
+        {firstPart}<br />{secondPart}
+      </p>
 
       {index === 1 && links.length > 0 && (
-        <div class="mt-2 flex gap-3 flex-wrap">
+        <div class="mt-2 flex gap-3 flex-wrap justify-center max-sm:justify-center">
           {links.map(link => (
-            <a href={link.url} target="_blank" class="tag flex items-center gap-2 border border-[#311B6609] bg-[#F3F7FF] font-medium text-text-primary py-1 px-3 rounded-full text-sm hover:bg-[#e5eefb]">
-              <img src={link.icon} alt={link.text} class="w-4 h-4" />
+            <a 
+              href={link.url} 
+              target="_blank" 
+              class="tag flex items-center gap-2 border border-[#311B6609] bg-[#F3F7FF] 
+              font-medium text-text-primary py-1 px-3 rounded-full text-sm 
+              hover:bg-[#e5eefb] max-sm:text-xs"
+            >
+              <img src={link.icon} alt={link.text} class="w-4 h-4 max-sm:w-3 max-sm:h-3" />
               <span>{link.text}</span>
             </a>
           ))}
@@ -66,4 +76,3 @@ const secondPart = rest.join('.');
     });
   });
 </script>
-
