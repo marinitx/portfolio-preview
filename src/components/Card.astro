@@ -31,25 +31,25 @@ const secondPart = rest.join('.');
       alt="Memoji profile picture"
       class="w-20 h-auto pl-2 select-none pointer-events-none max-sm:pl-0 max-sm:w-16"
     />
-    <span class="flex flex-col pl-4 max-sm:pl-0 max-sm:items-center">
+    <span class="flex flex-col pl-4 max-sm:pl-0 max-sm:items-center w-full">
       <p class="font-semibold text-lg max-sm:text-base">Marina</p>
       <p class="max-sm:text-center max-sm:px-4">
         {firstPart}<br />{secondPart}
       </p>
 
       {index === 1 && links.length > 0 && (
-        <div class="mt-2 flex gap-3 flex-wrap justify-center max-sm:justify-center">
+        <div class="mt-2 flex justify-start items-center gap-3 w-full max-sm:justify-center">
           {links.map(link => (
             <a 
-              href={link.url} 
-              target="_blank" 
-              class="tag flex items-center gap-2 border border-[#311B6609] bg-[#F3F7FF] 
-              font-medium text-text-primary py-1 px-3 rounded-full text-sm 
-              hover:bg-[#e5eefb] max-sm:text-xs"
-            >
-              <img src={link.icon} alt={link.text} class="w-4 h-4 max-sm:w-3 max-sm:h-3" />
-              <span>{link.text}</span>
-            </a>
+                href={link.url} 
+                target="_blank" 
+                class="tag flex items-center gap-1 border border-[#311B6609] bg-[#F3F7FF] 
+                font-medium text-text-primary py-1 px-2 rounded-full 
+                text-xs lg:text-[0.7rem] hover:bg-[#e5eefb] max-sm:text-xs"
+                >
+                <img src={link.icon} alt={link.text} class="w-4 h-4 max-sm:w-3 max-sm:h-3" />
+                <span>{link.text}</span>
+                </a>
           ))}
         </div>
       )}
